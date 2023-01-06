@@ -4,13 +4,38 @@
 	{
 		static void Main(string[] args)
 		{
+			Console.WriteLine("INTEL 8086");
+			Console.WriteLine("Wybierz rejestr:\n1) AH\n2) BH\n3) CH\n4) DH");
+
 			Console.WriteLine("Podaj wartoć rejestru AH");
 			string Ah = Console.ReadLine();
 			string AH = Ah.ToLower();
 
-			Console.WriteLine("Rejestr check");
-			Console.WriteLine("0 = " + AH[0]);
-			Console.WriteLine("1 = " + AH[1]);			
+			string chose = Console.ReadLine();
+			string choseLower = chose.ToUpper();
+
+			if (choseLower == "AH")
+			{
+
+			}
+			else if (choseLower == "BH")
+			{
+
+			}
+			else if (choseLower == "CH")
+			{
+
+			}
+			else if (choseLower == "DH")
+			{
+
+			}
+			else
+				Console.WriteLine("Nie ma takiego rejestru na liście");
+
+			//Console.WriteLine("Rejestr check");
+			//Console.WriteLine("0 = " + AH[0]); 
+			//Console.WriteLine("1 = " + AH[1]);			
 
 			if (AH.Length < 3 
 				&& (AH[0] == 'a' || AH[0] == 'b' || AH[0] == 'c' || AH[0] == 'd' || AH[0] == 'e' || AH[0] == 'f' 
