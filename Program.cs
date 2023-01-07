@@ -2,6 +2,8 @@
 {
 	internal class Program
 	{
+		string AH, BH, CH, DH, AL, BL, CL, DL;
+
 		static void Main(string[] args)
 		{
 			Console.WriteLine("INTEL 8086");
@@ -48,11 +50,12 @@
 				 || AH[1] == '0' || AH[1] == '1' || AH[1] == '2' || AH[1] == '3' || AH[1] == '4' || AH[1] == '5'
 				 || AH[1] == '6' || AH[1] == '7' || AH[1] == '8' || AH[1] == '9'))
 			{
-				Console.WriteLine("AH: " + AH);
+				Console.WriteLine("Aktualny stan rejestru AH: " + AH);
 			}
 			else
 			{
 				AH = "00";
+				Console.WriteLine("Aktualny stan rejestru");
 				Console.WriteLine("AH: " + AH + " - niepoprawna wartość, przypisanie wartości 0");
 			}
 
@@ -63,6 +66,10 @@
 			order = order.ToLower();
 			//ADD SUB IN DEC NOT AND OR
 
+			if (order == "mov")
+			{
+
+			}
 
 
 
@@ -76,6 +83,11 @@
 
 		}
 
+		static void Values()
+		{
 
+		}
+
+		
 	}
 }
