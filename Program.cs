@@ -2,9 +2,17 @@
 {
 	internal class Program
 	{
-		public void Main(string[] args)
+		static void Menu()
+		{
+			Console.WriteLine("Wybierz numer aby wykonać odpowiednią akcję:");
+			Console.WriteLine("1) Wpisz wartość do rejestru\n2) Przenieś wartość z rejestru\n3) Zamień wartości w rejestrach\n4) Zakończ działanie symulacji");
+		}
+
+		static void Main(string[] args)
 		{
 			//string AH, BH, CH, DH, AL, BL, CL, DL;
+
+			Menu();
 
 			Console.WriteLine("INTEL 8086");
 			Console.WriteLine("Wybierz rejestr:\n1) AH\n2) BH\n3) CH\n4) DH");
@@ -21,7 +29,7 @@
 			}
 			else if (choice == "BH")
 			{
-				Checker();
+				//Checker();
 				//AH = BH;
 			}
 			else if (choice == "CH")
@@ -76,9 +84,6 @@
 
 
 
-
-
-
 		}
 
 		// wywwołanie funkcji żeby nasetępnie przypisać to i oszczędzić miejsce w kodzie - do sprawdzenia czy działa
@@ -106,17 +111,5 @@
 				Console.WriteLine("AH: " + AH + " - niepoprawna wartość, przypisanie wartości 0");
 			}
 		}
-
-		
-
-
-
-		static void Values()
-		{
-			//Console.WriteLine("AH: " + AH);
-
-		}
-
-		
 	}
 }
