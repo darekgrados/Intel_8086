@@ -2,8 +2,6 @@
 {
 	internal class Program
 	{
-		
-
 		static void Main(string[] args)
 		{
 			string AL, BL, CL, DL = "00";
@@ -16,7 +14,9 @@
 				Console.WriteLine("INTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
 				Console.WriteLine("1) Wpisz wartość do rejestru\n2) Przenieś wartość z rejestru\n3) Zamień wartości w rejestrach\n4) Zakończ działanie symulacji");
 				option = Console.ReadLine();
-				
+
+				// DO zrobienia refaktoryzacja - przeniesienie na start wartości do wpisania aby były globalne dla pętli
+				#region WPIS DO REJESTRU
 				if (option == "1")
 				{
 					Console.WriteLine("Wybierz rejestr:\n1) AH\n2) BH\n3) CH\n4) DH");
@@ -101,22 +101,50 @@
 						}
 
 					}
-					else if (choice == "DH")
+					else if (choice == "4" || choice == "DH")
 					{
+						Console.Clear();
+						Console.WriteLine("Podaj wartoć rejestru DH");
+						string DH = Console.ReadLine();
+						DH = DH.ToLower();
 
+						if (DH.Length < 3
+							&& (DH[0] == 'a' || DH[0] == 'b' || DH[0] == 'c' || DH[0] == 'd' || DH[0] == 'e' || DH[0] == 'f'
+							 || DH[0] == '0' || DH[0] == '1' || DH[0] == '2' || DH[0] == '3' || DH[0] == '4' || DH[0] == '5'
+							 || DH[0] == '6' || DH[0] == '7' || DH[0] == '8' || DH[0] == '9')
+								
+							&& (DH[1] == 'a' || DH[1] == 'b' || DH[1] == 'c' || DH[1] == 'd' || DH[1] == 'e' || DH[1] == 'f'
+							 || DH[1] == '0' || DH[1] == '1' || DH[1] == '2' || DH[1] == '3' || DH[1] == '4' || DH[1] == '5'
+							 || DH[1] == '6' || DH[1] == '7' || DH[1] == '8' || DH[1] == '9'))
+						{
+							Console.WriteLine("Aktualny stan rejestru DH: " + DH);
+						}
+						else
+						{
+							DH = "00";
+							Console.WriteLine("Aktualny stan rejestru DH: " + DH);
+							Console.WriteLine("Wprowadzono niepoprawąa wartość, przypisano domyślną wartość");
+						}
 					}
 					else
-						Console.WriteLine("Nie ma takiego rejestru na liście");
-
-				} else if (option == "2")
+						Console.WriteLine("Nie ma takiego rejestru na liście");					
+				}
+				#endregion
+				
+				else if (option == "2")
 				{
 
 				}
 
-				
+				else if (option == "3")
+				{
+					Console.WriteLine("Wybierz pierwszy rejestr: ");
+				}
 
+				else
+					Console.WriteLine("Brak takiej opcji");
 
-			} while (option != "4");
+			} while (option != "5");
 			Console.WriteLine("Dziękuję za skorzystanie z syumluacji procesora INTEL 8086");
 
 			//Console.WriteLine("Rejestr check");
