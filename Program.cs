@@ -6,7 +6,7 @@
 
 		static void Main(string[] args)
 		{
-			string BH, CH, DH, AL, BL, CL, DL = "00";
+			string AL, BL, CL, DL = "00";
 
 			//Console.Clear();
 			//Menu();
@@ -21,11 +21,10 @@
 				{
 					Console.WriteLine("Wybierz rejestr:\n1) AH\n2) BH\n3) CH\n4) DH");
 
-					#region wybór pola
 					string choice = Console.ReadLine();
 					choice = choice.ToUpper();
 
-					if (choice == "1")
+					if (choice == "1" || choice == "AH")
 					{
 						Console.Clear();
 						Console.WriteLine("Podaj wartoć rejestru AH");
@@ -50,12 +49,33 @@
 							Console.WriteLine("AH: " + AH + " - niepoprawna wartość, przypisanie wartości 0");
 						}
 					}
-					else if (choice == "BH")
+					else if (choice == "2" || choice == "BH")
 					{
-						//Checker();
-						//AH = BH;
+						Console.Clear();
+						Console.WriteLine("Podaj wartoć rejestru BH");
+						string BH = Console.ReadLine();
+						BH = BH.ToLower();
+
+						if (BH.Length < 3														
+							&& (BH[0] == 'a' || BH[0] == 'b' || BH[0] == 'c' || BH[0] == 'd' || BH[0] == 'e' || BH[0] == 'f'
+							 || BH[0] == '0' || BH[0] == '1' || BH[0] == '2' || BH[0] == '3' || BH[0] == '4' || BH[0] == '5'
+							 || BH[0] == '6' || BH[0] == '7' || BH[0] == '8' || BH[0] == '9')					
+																												
+							&& (BH[1] == 'a' || BH[1] == 'b' || BH[1] == 'c' || BH[1] == 'd' || BH[1] == 'e' || BH[1] == 'f'
+							 || BH[1] == '0' || BH[1] == '1' || BH[1] == '2' || BH[1] == '3' || BH[1] == '4' || BH[1] == '5'
+							 || BH[1] == '6' || BH[1] == '7' || BH[1] == '8' || BH[1] == '9'))
+						{
+							Console.WriteLine("Aktualny stan rejestru BH: " + BH);
+						}
+						else
+						{
+							BH = "00";
+							Console.WriteLine("Aktualny stan rejestru");
+							Console.WriteLine("BH: " + BH + " - niepoprawna wartość, przypisanie wartości 0");
+						}
+
 					}
-					else if (choice == "CH")
+					else if (choice == "3" || choice == "CH")
 					{
 
 					}
@@ -65,22 +85,21 @@
 					}
 					else
 						Console.WriteLine("Nie ma takiego rejestru na liście");
-					#endregion
+
+				} else if (option == "2")
+				{
 
 				}
 
-
-			} while (option != "4");	
-
+				
 
 
-			
+			} while (option != "4");
+			Console.WriteLine("Dziękuję za skorzystanie z syumluacji procesora INTEL 8086");
 
 			//Console.WriteLine("Rejestr check");
 			//Console.WriteLine("0 = " + AH[0]); 
-			//Console.WriteLine("1 = " + AH[1]);	
-
-			
+			//Console.WriteLine("1 = " + AH[1]);				
 			
 			Console.WriteLine("Wybierz rozkaz do wykonania\n1) MOV\n2) XCHG");
 			string order = Console.ReadLine();
@@ -92,12 +111,10 @@
 
 			}
 
-
-
 		}
 
 		// wywwołanie funkcji żeby nasetępnie przypisać to i oszczędzić miejsce w kodzie - do sprawdzenia czy działa
-		private void Checker()
+		public void Checker()
 		{
 			Console.WriteLine("Podaj wartoć rejestru AH");
 			string AH = Console.ReadLine();
