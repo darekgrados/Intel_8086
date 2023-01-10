@@ -124,35 +124,42 @@
 					//Console.WriteLine("Nie ma takiego rejestru na liście");
 				#endregion
 
-				Console.WriteLine("INTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
-				Console.WriteLine("1) Wpisz wartość do rejestru\n2) Przenieś wartość z rejestru - MOV\n3) Zamień wartości w rejestrach - XCHG\n4) Pokaż stan rejestrów\n5) Zakończ działanie symulacji");
+				Console.WriteLine("\nINTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
+				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) Pokaż stan rejestrów\n4) MAGIA\n5) Zakończ działanie symulacji");
 				option = Console.ReadLine();
+
+				
 
 				if (option == "1")
 				{
-					Console.WriteLine();
+					Console.WriteLine("1 - AH, 2 - BH, 3 - CH, 4 - DH, 5 - AL, 6 - BL, 7 - CL, 8 - DL");
+					Console.WriteLine("Wybierz pierwszy rejestr: ");
+					string firstRecord = Console.ReadLine();
+					Console.WriteLine("Wybierz drugi rejestr: ");
+					string secondRecord = Console.ReadLine();
 				}
 
 				else if (option == "2")
 				{
-					Console.WriteLine("Wybierz 1 rejestr: ");
-					Console.WriteLine("Wybierz 2 rejestr: ");
+
 				}
 
 				else if (option == "3")
-				{
-					Console.WriteLine("Wybierz pierwszy rejestr: ");
-				}
-
-				else if (option == "4")
 				{
 					Console.Clear();
 					Console.WriteLine("Stan rejestrów:");
 					Console.WriteLine("AH: " + AH + "\nBH: " + BH + "\nCH: " + CH + "\nDH: " + DH);
 				}
 
+				else if (option == "4")
+				{
+					Console.WriteLine();
+				}
+
+				else if (option == "5")
+					Console.Write("");
 				else
-					Console.WriteLine("Brak takiej opcji");
+					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
 
 			} while (option != "5");
 			Console.WriteLine("Dziękuję za skorzystanie z syumluacji procesora INTEL 8086");
