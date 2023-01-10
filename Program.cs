@@ -39,8 +39,7 @@
 						 || AH[1] == '6' || AH[1] == '7' || AH[1] == '8' || AH[1] == '9'))
 					{
 						Console.WriteLine("Aktualny stan rejestru AH: " + AH);
-					}
-					else
+					} else
 					{
 						AH = "00"; 
 						Console.WriteLine("Aktualny stan rejestru AH: " + AH);
@@ -64,8 +63,7 @@
 						 || BH[1] == '6' || BH[1] == '7' || BH[1] == '8' || BH[1] == '9'))
 					{
 						Console.WriteLine("Aktualny stan rejestru BH: " + BH);
-					}
-					else
+					} else
 					{
 						BH = "00";
 						Console.WriteLine("Aktualny stan rejestru BH: " + BH);
@@ -90,8 +88,7 @@
 						 || CH[1] == '6' || CH[1] == '7' || CH[1] == '8' || CH[1] == '9'))
 					{
 						Console.WriteLine("Aktualny stan rejestru CH: " + CH);
-					}
-					else
+					} else
 					{
 						CH = "00";
 						Console.WriteLine("Aktualny stan rejestru CH: " + CH);
@@ -116,8 +113,7 @@
 						 || DH[1] == '6' || DH[1] == '7' || DH[1] == '8' || DH[1] == '9'))
 					{
 						Console.WriteLine("Aktualny stan rejestru DH: " + DH);
-					}
-					else
+					} else
 					{
 						DH = "00";
 						Console.WriteLine("Aktualny stan rejestru DH: " + DH);
@@ -129,7 +125,7 @@
 				#endregion
 
 				Console.WriteLine("INTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
-				Console.WriteLine("1) Wpisz wartość do rejestru\n2) Przenieś wartość z rejestru\n3) Zamień wartości w rejestrach\n4) Zakończ działanie symulacji");
+				Console.WriteLine("1) Wpisz wartość do rejestru\n2) Przenieś wartość z rejestru - MOV\n3) Zamień wartości w rejestrach - XCHG\n4) Pokaż stan rejestrów\n5) Zakończ działanie symulacji");
 				option = Console.ReadLine();
 
 				if (option == "1")
@@ -139,7 +135,8 @@
 
 				else if (option == "2")
 				{
-
+					Console.WriteLine("Wybierz 1 rejestr: ");
+					Console.WriteLine("Wybierz 2 rejestr: ");
 				}
 
 				else if (option == "3")
@@ -147,26 +144,19 @@
 					Console.WriteLine("Wybierz pierwszy rejestr: ");
 				}
 
+				else if (option == "4")
+				{
+					Console.Clear();
+					Console.WriteLine("Stan rejestrów:");
+					Console.WriteLine("AH: " + AH + "\nBH: " + BH + "\nCH: " + CH + "\nDH: " + DH);
+				}
+
 				else
 					Console.WriteLine("Brak takiej opcji");
 
 			} while (option != "5");
 			Console.WriteLine("Dziękuję za skorzystanie z syumluacji procesora INTEL 8086");
-
-			//Console.WriteLine("Rejestr check");
-			//Console.WriteLine("0 = " + AH[0]); 
-			//Console.WriteLine("1 = " + AH[1]);				
 			
-			Console.WriteLine("Wybierz rozkaz do wykonania\n1) MOV\n2) XCHG");
-			string order = Console.ReadLine();
-			order = order.ToLower();
-			//ADD SUB IN DEC NOT AND OR
-
-			if (order == "mov")
-			{
-
-			}
-
 		}
 
 	}
