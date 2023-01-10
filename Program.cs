@@ -109,11 +109,13 @@
 					Console.WriteLine("Wybierz drugi rejestr: ");
 					string secondRecord = Console.ReadLine();
 
-
+					// TODO Multiswitch
+					// https://stackoverflow.com/questions/7967523/multi-variable-switch-statement-in-c-sharp
 				}
 
 				else if (option == "2")
 				{
+
 
 				}
 
@@ -135,7 +137,7 @@
 					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
 
 			} while (option != "5");
-			Console.WriteLine("Dziękuję za skorzystanie z syumluacji procesora INTEL 8086");
+			Console.WriteLine("Dziękuję za skorzystanie z symuluacji procesora INTEL 8086");
 			
 		}
 
