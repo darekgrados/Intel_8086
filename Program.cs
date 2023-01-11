@@ -104,13 +104,23 @@
 				if (option == "1")
 				{
 					Console.WriteLine("1 - AH, 2 - BH, 3 - CH, 4 - DH, 5 - AL, 6 - BL, 7 - CL, 8 - DL");
-					Console.WriteLine("Wybierz pierwszy rejestr: ");
+					Console.Write("Wybierz pierwszy rejestr: ");
 					string firstRecord = Console.ReadLine();
-					Console.WriteLine("Wybierz drugi rejestr: ");
+					Console.Write("Wybierz drugi rejestr: ");
 					string secondRecord = Console.ReadLine();
 
-					// TODO Multiswitch
-					// https://stackoverflow.com/questions/7967523/multi-variable-switch-statement-in-c-sharp
+					switch (firstRecord, secondRecord) 
+					{
+						case ("1", "2"):
+							Console.WriteLine(AH);
+							Console.WriteLine(BH + " - przed");
+
+							BH = AH;
+							Console.WriteLine("Aktualna wartość BH: " + BH);
+								break;
+
+
+					}
 				}
 
 				else if (option == "2")
