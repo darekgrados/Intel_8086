@@ -112,14 +112,14 @@
 					switch (firstRecord, secondRecord) 
 					{
 						case ("1", "2"):
-							Console.WriteLine(AH);
-							Console.WriteLine(BH + " - przed");
-
 							BH = AH;
 							Console.WriteLine("Aktualna wartość BH: " + BH);
 								break;
 
 
+
+						default:
+							break;
 					}
 				}
 
