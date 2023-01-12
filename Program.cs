@@ -101,6 +101,8 @@
 				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) Pokaż stan rejestrów\n4) MAGIA\n5) Zakończ działanie symulacji\n");
 				option = Console.ReadLine();
 
+				Console.Clear();	
+
 				if (option == "1")
 				{	
 					string AL, BL, CL, DL = null;
@@ -200,76 +202,60 @@
 					switch (firstRecord, secondRecord)
 					{
 						case ("1", "1"):
-							temp = AL; ;
+							temp = AL;
 							AL = AH;
 							AH = temp;
 							Console.WriteLine("Aktualna wartość AH: " + AH);
 							Console.WriteLine("Aktualna wartość AL: " + AL);
 							break;
 						case ("1", "2"):
-							temp = AL; ;
+							temp = BL;
 							BL = AH;
 							AH = temp;
 							Console.WriteLine("Aktualna wartość AH: " + AH);
 							Console.WriteLine("Aktualna wartość BL: " + BL);
 							break;
 						case ("1", "3"):
+							temp = CL;
 							CL = AH;
+							AH = temp;
+							Console.WriteLine("Aktualna wartość AH: " + AH);
 							Console.WriteLine("Aktualna wartość CL: " + CL);
 							break;
 						case ("1", "4"):
+							temp = DL;
 							DL = AH;
+							AH = temp;
+							Console.WriteLine("Aktualna wartość AH: " + AH);
 							Console.WriteLine("Aktualna wartość DL: " + DL);
 							break;
 
 						case ("2", "1"):
+							temp = AL;
 							AL = BH;
+							BH = temp;
+							Console.WriteLine("Aktualna wartość BH: " + BH);
 							Console.WriteLine("Aktualna wartość AL: " + AL);
 							break;
 						case ("2", "2"):
+							temp = BL;
 							BL = BH;
+							BH = temp;
+							Console.WriteLine("Aktualna wartość BH: " + BH);
 							Console.WriteLine("Aktualna wartość BL: " + BL);
 							break;
 						case ("2", "3"):
+							temp = CL;
 							CL = BH;
+							BH = temp;
+							Console.WriteLine("Aktualna wartość BH: " + BH);
 							Console.WriteLine("Aktualna wartość CL: " + CL);
 							break;
 						case ("2", "4"):
+							temp = DL;
 							DL = BH;
-							Console.WriteLine("Aktualna wartość DL: " + DL);
-							break;
-
-						case ("3", "1"):
-							AL = CH;
-							Console.WriteLine("Aktualna wartość AL: " + AL);
-							break;
-						case ("3", "2"):
-							BL = CH;
-							Console.WriteLine("Aktualna wartość BL: " + BL);
-							break;
-						case ("3", "3"):
-							CL = CH;
-							Console.WriteLine("Aktualna wartość CL: " + CL);
-							break;
-						case ("3", "4"):
-							DL = CH;
-							Console.WriteLine("Aktualna wartość DL: " + DL);
-							break;
-
-						case ("4", "1"):
-							AL = DH;
-							Console.WriteLine("Aktualna wartość AL: " + AL);
-							break;
-						case ("4", "2"):
-							BL = DH;
-							Console.WriteLine("Aktualna wartość BL: " + BL);
-							break;
-						case ("4", "3"):
-							CL = DH;
-							Console.WriteLine("Aktualna wartość CL: " + CL);
-							break;
-						case ("4", "4"):
-							DL = DH;
+							BH = temp;
+							Console.WriteLine("Aktualna wartość BH: " + BH);
 							Console.WriteLine("Aktualna wartość DL: " + DL);
 							break;
 
