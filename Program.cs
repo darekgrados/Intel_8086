@@ -98,7 +98,7 @@
 			do
 			{
 				Console.WriteLine("\nINTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
-				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) Pokaż stan rejestrów\n4) MAGIA\n5) Zakończ działanie symulacji\n");
+				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) AND\n4) NOT\n5) OR\n6) XOR\n8) Pokaż stan rejestrów\n9) Zakończ działanie symulacji\n");
 				option = Console.ReadLine();
 
 				Console.Clear();	
@@ -323,19 +323,46 @@
 
 				}
 
-				else if (option == "3")
+				else if (option == "3" || option == "5")
+				{
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz pierwszy rejestr: ");
+					string firstRecord = Console.ReadLine();
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz drugi rejestr: ");
+					string secondRecord = Console.ReadLine();
+
+					switch (firstRecord, secondRecord)
+					{
+						case ("1", "1"):
+							Console.WriteLine("True");
+							break;
+						case ("1", "2"):
+							if (AH == BH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");							
+							break;
+						case ("1", "3"):
+							if (AH == CH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+
+
+
+						default:
+							break;
+					}
+				}
+
+				else if (option == "8")
 				{
 					Console.Clear();
 					Console.WriteLine("Stan rejestrów:");
 					Console.WriteLine("AH: " + AH + "\nBH: " + BH + "\nCH: " + CH + "\nDH: " + DH);
 				}
 
-				else if (option == "4")
-				{
-					Console.WriteLine();
-				}
-
-				else if (option == "5")
+				else if (option == "9")
 					Console.Write("");
 				else
 					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
