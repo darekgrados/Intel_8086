@@ -259,6 +259,64 @@
 							Console.WriteLine("Aktualna wartość DL: " + DL);
 							break;
 
+						case ("3", "1"):
+							temp = AL;
+							AL = CH;
+							CH = temp;
+							Console.WriteLine("Aktualna wartość CH: " + CH);
+							Console.WriteLine("Aktualna wartość AL: " + AL);
+							break;
+						case ("3", "2"):
+							temp = BL;
+							BL = CH;
+							CH = temp;
+							Console.WriteLine("Aktualna wartość CH: " + CH);
+							Console.WriteLine("Aktualna wartość BL: " + BL);
+							break;
+						case ("3", "3"):
+							temp = CL;
+							CL = CH;
+							CH = temp;
+							Console.WriteLine("Aktualna wartość CH: " + CH);
+							Console.WriteLine("Aktualna wartość CL: " + CL);
+							break;
+						case ("3", "4"):
+							temp = DL;
+							DL = CH;
+							CH = temp;
+							Console.WriteLine("Aktualna wartość CH: " + CH);
+							Console.WriteLine("Aktualna wartość DL: " + DL);
+							break;
+
+						case ("4", "1"):
+							temp = AL;
+							AL = DH;
+							DH = temp;
+							Console.WriteLine("Aktualna wartość DH: " + DH);
+							Console.WriteLine("Aktualna wartość AL: " + AL);
+							break;
+						case ("4", "2"):
+							temp = BL;
+							BL = DH;
+							DH = temp;
+							Console.WriteLine("Aktualna wartość DH: " + DH);
+							Console.WriteLine("Aktualna wartość BL: " + BL);
+							break;
+						case ("4", "3"):
+							temp = CL;
+							CL = DH;
+							DH = temp;
+							Console.WriteLine("Aktualna wartość DH: " + DH);
+							Console.WriteLine("Aktualna wartość CL: " + CL);
+							break;
+						case ("4", "4"):
+							temp = DL;
+							DL = DH;
+							DH = temp;
+							Console.WriteLine("Aktualna wartość DH: " + DH);
+							Console.WriteLine("Aktualna wartość DL: " + DL);
+							break;
+
 						default:
 							break;
 					}
