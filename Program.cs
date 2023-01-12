@@ -98,7 +98,7 @@
 			do
 			{
 				Console.WriteLine("\nINTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
-				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) AND\n4) NOT\n5) OR\n6) XOR\n8) Pokaż stan rejestrów\n9) Zakończ działanie symulacji\n");
+				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) AND\n4) NOT\n5) OR\n6) XOR\n7) Inkrementacja - In\n8) Pokaż stan rejestrów\n9) Zakończ działanie symulacji\n");
 				option = Console.ReadLine();
 
 				Console.Clear();	
@@ -527,6 +527,13 @@
 						default:
 							break;
 					}
+				}
+
+				else if (option == "7")
+				{
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz rejestr do ++: ");
+					string firstRecord = Console.ReadLine();
+
 				}
 
 				else if (option == "8")
