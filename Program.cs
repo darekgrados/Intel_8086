@@ -347,8 +347,182 @@
 							else
 								Console.WriteLine("False");
 							break;
+						case ("1", "4"):
+							if (AH == DH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
 
+						case ("2", "1"):
+							if (BH == AH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");							
+							break;
+						case ("2", "2"):
+							Console.WriteLine("True");							
+							break;
+						case ("2", "3"):
+							if (BH == CH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("2", "4"):
+							if (BH == DH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
 
+						case ("3", "1"):
+							if (CH == AH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("3", "2"):
+							if (CH == BH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;							
+						case ("3", "3"):
+							Console.WriteLine("True");
+							break;
+						case ("3", "4"):
+							if (CH == DH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+
+						case ("4", "1"):
+							if (DH == AH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("4", "2"):
+							if (DH == BH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+							
+						case ("4", "3"):
+							if (DH == CH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("4", "4"):
+							Console.WriteLine("True");
+							break;
+
+						default:
+							break;
+					}
+				}
+
+				else if (option == "4" || option == "6")
+				{
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz pierwszy rejestr: ");
+					string firstRecord = Console.ReadLine();
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz drugi rejestr: ");
+					string secondRecord = Console.ReadLine();
+
+					switch (firstRecord, secondRecord)
+					{
+						case ("1", "1"):
+							Console.WriteLine("False");
+							break;
+						case ("1", "2"):
+							if (AH != BH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("1", "3"):
+							if (AH != CH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("1", "4"):
+							if (AH != DH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+
+						case ("2", "1"):
+							if (BH != AH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("2", "2"):
+							Console.WriteLine("False");
+							break;
+						case ("2", "3"):
+							if (BH != CH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("2", "4"):
+							if (BH != DH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+
+						case ("3", "1"):
+							if (CH != AH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("3", "2"):
+							if (CH != BH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("3", "3"):
+							Console.WriteLine("False");
+							break;
+						case ("3", "4"):
+							if (CH != DH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+
+						case ("4", "1"):
+							if (DH != AH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("4", "2"):
+							if (DH != BH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+
+						case ("4", "3"):
+							if (DH != CH)
+								Console.WriteLine("True");
+							else
+								Console.WriteLine("False");
+							break;
+						case ("4", "4"):
+							Console.WriteLine("False");
+							break;
 
 						default:
 							break;
@@ -367,7 +541,7 @@
 				else
 					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
 
-			} while (option != "5");
+			} while (option != "9");
 			Console.WriteLine("Dziękuję za skorzystanie z symuluacji procesora INTEL 8086");
 			
 		}
