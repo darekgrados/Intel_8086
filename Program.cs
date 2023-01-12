@@ -104,7 +104,6 @@
 				if (option == "1")
 				{	
 					string AL, BL, CL, DL = null;
-					// TODO zapis wartości AL itp
 
 					//Console.WriteLine("1 - AH, 2 - BH, 3 - CH, 4 - DH, 5 - AL, 6 - BL, 7 - CL, 8 - DL");
 					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz pierwszy rejestr: ");
@@ -189,7 +188,94 @@
 
 				else if (option == "2")
 				{
+					string AL = "00", BL = "00", CL = "00", DL = "00";
+					string temp = "  ";
 
+					//Console.WriteLine("1 - AH, 2 - BH, 3 - CH, 4 - DH, 5 - AL, 6 - BL, 7 - CL, 8 - DL");
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz pierwszy rejestr: ");
+					string firstRecord = Console.ReadLine();
+					Console.Write("1 - AL, 2 - BL, 3 - CL, 4 - DL\nWybierz drugi rejestr: ");
+					string secondRecord = Console.ReadLine();
+
+					switch (firstRecord, secondRecord)
+					{
+						case ("1", "1"):
+							temp = AL; ;
+							AL = AH;
+							AH = temp;
+							Console.WriteLine("Aktualna wartość AH: " + AH);
+							Console.WriteLine("Aktualna wartość AL: " + AL);
+							break;
+						case ("1", "2"):
+							temp = AL; ;
+							BL = AH;
+							AH = temp;
+							Console.WriteLine("Aktualna wartość AH: " + AH);
+							Console.WriteLine("Aktualna wartość BL: " + BL);
+							break;
+						case ("1", "3"):
+							CL = AH;
+							Console.WriteLine("Aktualna wartość CL: " + CL);
+							break;
+						case ("1", "4"):
+							DL = AH;
+							Console.WriteLine("Aktualna wartość DL: " + DL);
+							break;
+
+						case ("2", "1"):
+							AL = BH;
+							Console.WriteLine("Aktualna wartość AL: " + AL);
+							break;
+						case ("2", "2"):
+							BL = BH;
+							Console.WriteLine("Aktualna wartość BL: " + BL);
+							break;
+						case ("2", "3"):
+							CL = BH;
+							Console.WriteLine("Aktualna wartość CL: " + CL);
+							break;
+						case ("2", "4"):
+							DL = BH;
+							Console.WriteLine("Aktualna wartość DL: " + DL);
+							break;
+
+						case ("3", "1"):
+							AL = CH;
+							Console.WriteLine("Aktualna wartość AL: " + AL);
+							break;
+						case ("3", "2"):
+							BL = CH;
+							Console.WriteLine("Aktualna wartość BL: " + BL);
+							break;
+						case ("3", "3"):
+							CL = CH;
+							Console.WriteLine("Aktualna wartość CL: " + CL);
+							break;
+						case ("3", "4"):
+							DL = CH;
+							Console.WriteLine("Aktualna wartość DL: " + DL);
+							break;
+
+						case ("4", "1"):
+							AL = DH;
+							Console.WriteLine("Aktualna wartość AL: " + AL);
+							break;
+						case ("4", "2"):
+							BL = DH;
+							Console.WriteLine("Aktualna wartość BL: " + BL);
+							break;
+						case ("4", "3"):
+							CL = DH;
+							Console.WriteLine("Aktualna wartość CL: " + CL);
+							break;
+						case ("4", "4"):
+							DL = DH;
+							Console.WriteLine("Aktualna wartość DL: " + DL);
+							break;
+
+						default:
+							break;
+					}
 
 				}
 
