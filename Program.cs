@@ -342,8 +342,7 @@
 								Console.WriteLine("False");							
 							break;
 						case ("1", "3"):
-							if (AH == CH)
-								Console.WriteLine("True");
+							(AH == CH) ? Console.WriteLine("True") : 
 							else
 								Console.WriteLine("False");
 							break;
@@ -533,6 +532,17 @@
 				{
 					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz rejestr do ++: ");
 					string firstRecord = Console.ReadLine();
+					if (firstRecord == "1")
+					{
+						if (AH[0] == '0' || AH[0] == '1' || AH[0] == '2' || AH[0] == '3' || AH[0] == '4' 
+						 || AH[0] == '5' || AH[0] == '6' || AH[0] == '7' || AH[0] == '8')
+						{
+							int zero;
+							zero = AH[0];
+							zero++;
+
+						}
+					}
 
 				}
 
