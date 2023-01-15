@@ -537,37 +537,95 @@
 					{
 						case "1":
 							{
+								//do rozczesania bardziej 
+								string digits = new string(AH.Where(char.IsDigit).ToArray());
+								string letters = new string(AH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
 
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								AH = newStr;
+								Console.WriteLine("AH: " + AH);
+							}
+							break;
 
+						case "2":
+							{
+								//do rozczesania bardziej 
+								string digits = new string(BH.Where(char.IsDigit).ToArray());
+								string letters = new string(BH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								BH = newStr;
+								Console.WriteLine("BH: " + BH);
+							}
+							break;
+
+						case "3":
+							{
+								//do rozczesania bardziej 
+								string digits = new string(CH.Where(char.IsDigit).ToArray());
+								string letters = new string(CH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								CH = newStr;
+								Console.WriteLine("CH: " + CH);
+							}
+							break;
+
+						case "4":
+							{
+								//do rozczesania bardziej 
+								string digits = new string(DH.Where(char.IsDigit).ToArray());
+								string letters = new string(DH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								DH = newStr;
+								Console.WriteLine("DH: " + DH);
 							}
 							break;
 
 						default:
 							break;
 					}
-
-					if (firstRecord == "1")
-					{
-
-						//do rozczesania bardziej 
-						string digits = new string(AH.Where(char.IsDigit).ToArray());
-						string letters = new string(AH.Where(char.IsLetter).ToArray());
-						int number;
-						if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
-						{
-							Console.WriteLine("Something weired happened");
-						}
-
-						string newStr = letters + (++number).ToString("D5");
-						newStr = newStr.TrimStart('0');
-						if (newStr.Length == 1)
-						{
-							newStr = "0" + newStr;
-						}
-						AH = newStr;
-						Console.WriteLine(AH);
-					}
-
 				}
 
 				else if (option == "8")
