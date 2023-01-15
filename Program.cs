@@ -531,40 +531,51 @@
 
 				else if (option == "7")
 				{
-					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz rejestr do ++: ");
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz rejestr do inkrementacji: ");
 					string firstRecord = Console.ReadLine();
+					switch (firstRecord)
+					{
+						case "1":
+							{
+
+
+							}
+							break;
+
+						default:
+							break;
+					}
+
 					if (firstRecord == "1")
 					{
-						Console.WriteLine("AH przed wynosi: " + AH);
-						Console.WriteLine("AH + 1 = " + AH+1);
+						//Console.WriteLine("AH przed wynosi: " + AH);
+						//Console.WriteLine("AH + 1 = " + AH+1);
 
-						switch (AH[0])
-						{
-							case '0':
-								char temp = '1';
-								temp = AH[0];
-								Console.WriteLine(temp);
-								Console.WriteLine("podmieniony indeks = " + AH);
-								break;
+						//switch (AH[0])
+						//{
+						//	case '0':
+						//		char temp = '1';
+						//		temp = AH[0];
+						//		Console.WriteLine(temp);
+						//		Console.WriteLine("podmieniony indeks = " + AH);
+						//		break;
 
-							default:
-								break;
+						//	default:
+						//		break;
 
-						};
+						//};
 
-						if (AH[0] == '0')
-						{
+						//if (AH[0] == '0')
+						//{
 
-							Console.WriteLine("Zamiana indeksu stringiem - 1");
+						//	Console.WriteLine("Zamiana indeksu stringiem - 1");
 
-						}
+						//}
 
 
 						//blisko ale to nie to
-						string str = "10";
-						string digits = new string(str.Where(char.IsDigit).ToArray());
-						string letters = new string(str.Where(char.IsLetter).ToArray());
-
+						string digits = new string(AH.Where(char.IsDigit).ToArray());
+						string letters = new string(AH.Where(char.IsLetter).ToArray());
 						int number;
 						if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
 						{
@@ -573,6 +584,11 @@
 
 						string newStr = letters + (++number).ToString("D5");
 						newStr = newStr.TrimStart('0');
+						if (newStr.Length == 1)
+						{
+							newStr = "0" + newStr;
+						}
+						AH = newStr;
 						Console.WriteLine(newStr);
 					}
 
