@@ -548,32 +548,8 @@
 
 					if (firstRecord == "1")
 					{
-						//Console.WriteLine("AH przed wynosi: " + AH);
-						//Console.WriteLine("AH + 1 = " + AH+1);
 
-						//switch (AH[0])
-						//{
-						//	case '0':
-						//		char temp = '1';
-						//		temp = AH[0];
-						//		Console.WriteLine(temp);
-						//		Console.WriteLine("podmieniony indeks = " + AH);
-						//		break;
-
-						//	default:
-						//		break;
-
-						//};
-
-						//if (AH[0] == '0')
-						//{
-
-						//	Console.WriteLine("Zamiana indeksu stringiem - 1");
-
-						//}
-
-
-						//blisko ale to nie to
+						//do rozczesania bardziej 
 						string digits = new string(AH.Where(char.IsDigit).ToArray());
 						string letters = new string(AH.Where(char.IsLetter).ToArray());
 						int number;
@@ -589,7 +565,7 @@
 							newStr = "0" + newStr;
 						}
 						AH = newStr;
-						Console.WriteLine(newStr);
+						Console.WriteLine(AH);
 					}
 
 				}
