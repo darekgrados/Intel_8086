@@ -342,7 +342,8 @@
 								Console.WriteLine("False");							
 							break;
 						case ("1", "3"):
-							(AH == CH) ? Console.WriteLine("True") : 
+							if (AH == CH)
+								Console.WriteLine("True");
 							else
 								Console.WriteLine("False");
 							break;
@@ -534,14 +535,32 @@
 					string firstRecord = Console.ReadLine();
 					if (firstRecord == "1")
 					{
-						if (AH[0] == '0' || AH[0] == '1' || AH[0] == '2' || AH[0] == '3' || AH[0] == '4' 
-						 || AH[0] == '5' || AH[0] == '6' || AH[0] == '7' || AH[0] == '8')
+						Console.WriteLine("AH przed wynosi: " + AH);
+						Console.WriteLine("AH + 1 = " + AH+1);
+
+						switch (AH[0])
 						{
-							int zero;
-							zero = AH[0];
-							zero++;
+							case '0':
+								char temp = '1';
+								temp = AH[0];
+								Console.WriteLine(temp);
+								Console.WriteLine("podmieniony indeks = " + AH);
+								break;
+
+							default:
+								break;
+
+						};
+
+						if (AH[0] == '0')
+						{
+
+							Console.WriteLine("Zamiana indeksu stringiem - 1");
 
 						}
+							
+
+
 					}
 
 				}
