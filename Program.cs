@@ -666,7 +666,7 @@
 									Console.WriteLine("Something weired happened");
 								}
 
-								string newStr = letters + (++number).ToString("D5");
+								string newStr = letters + (--number).ToString("D5");
 								newStr = newStr.TrimStart('0');
 								if (newStr.Length == 1)
 								{
@@ -687,7 +687,7 @@
 									Console.WriteLine("Something weired happened");
 								}
 
-								string newStr = letters + (++number).ToString("D5");
+								string newStr = letters + (--number).ToString("D5");
 								newStr = newStr.TrimStart('0');
 								if (newStr.Length == 1)
 								{
@@ -708,7 +708,7 @@
 									Console.WriteLine("Something weired happened");
 								}
 
-								string newStr = letters + (++number).ToString("D5");
+								string newStr = letters + (--number).ToString("D5");
 								newStr = newStr.TrimStart('0');
 								if (newStr.Length == 1)
 								{
