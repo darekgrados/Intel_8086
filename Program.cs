@@ -98,7 +98,8 @@
 			do
 			{
 				Console.WriteLine("\nINTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
-				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) AND\n4) NOT\n5) OR\n6) XOR\n7) Inkrementacja - In\n8) Pokaż stan rejestrów\n9) Zakończ działanie symulacji\n");
+				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) AND\n4) NOT\n5) OR\n6) XOR\n" +
+					"7) Inkrementacja - In\n8) Dekrementacja - Dec\n9) Pokaż stan rejestrów\n10) Zakończ działanie symulacji\n");
 				option = Console.ReadLine();
 
 				Console.Clear();	
@@ -630,12 +631,107 @@
 
 				else if (option == "8")
 				{
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz rejestr do dekrementacji: ");
+					string firstRecord = Console.ReadLine();
+					switch (firstRecord)
+					{
+						case "1":
+							{
+								string digits = new string(AH.Where(char.IsDigit).ToArray());
+								string letters = new string(AH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (--number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								AH = newStr;
+								Console.WriteLine("AH: " + AH);
+							}
+							break;
+
+						case "2":
+							{
+								string digits = new string(BH.Where(char.IsDigit).ToArray());
+								string letters = new string(BH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								BH = newStr;
+								Console.WriteLine("BH: " + BH);
+							}
+							break;
+
+						case "3":
+							{
+								string digits = new string(CH.Where(char.IsDigit).ToArray());
+								string letters = new string(CH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								CH = newStr;
+								Console.WriteLine("CH: " + CH);
+							}
+							break;
+
+						case "4":
+							{
+								string digits = new string(DH.Where(char.IsDigit).ToArray());
+								string letters = new string(DH.Where(char.IsLetter).ToArray());
+								int number;
+								if (!int.TryParse(digits, out number)) //int.Parse would do the job since only digits are selected
+								{
+									Console.WriteLine("Something weired happened");
+								}
+
+								string newStr = letters + (++number).ToString("D5");
+								newStr = newStr.TrimStart('0');
+								if (newStr.Length == 1)
+								{
+									newStr = "0" + newStr;
+								}
+								DH = newStr;
+								Console.WriteLine("DH: " + DH);
+							}
+							break;
+
+						default:
+							break;
+					}
+				}
+
+				else if (option == "9")
+				{
 					Console.Clear();
 					Console.WriteLine("Stan rejestrów:");
 					Console.WriteLine("AH: " + AH + "\nBH: " + BH + "\nCH: " + CH + "\nDH: " + DH);
 				}
 
-				else if (option == "9")
+				else if (option == "10")
 					Console.Write("");
 				else
 					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
