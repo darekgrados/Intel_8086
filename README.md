@@ -6,4 +6,4 @@ Nietypowe zastosowania
 - multiswitch
 
 Na starcie do naszego procesora wpisujemy rejestry, które są walidowane.
-Następnie mamy działanie komend w pęlti, możemy wykonywać konkretne rozkazy
+Następnie mamy działanie komend w pęlti, możemy wykonywać konkretne rozkazy.
