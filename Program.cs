@@ -736,7 +736,7 @@
 				else
 					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
 
-			} while (option != "9");
+			} while (option != "10");
 			Console.WriteLine("Dziękuję za skorzystanie z symuluacji procesora INTEL 8086");
 			
 		}
