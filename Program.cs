@@ -1,4 +1,7 @@
-﻿namespace Intel_8086
+﻿using System.Globalization;
+using System.Numerics;
+
+namespace Intel_8086
 {
 	internal class Program
 	{
@@ -99,7 +102,7 @@
 			{
 				Console.WriteLine("\nINTEL 8086\nWybierz numer aby wykonać odpowiednią akcję:");
 				Console.WriteLine("1) Przenieś wartość do innego rejestru - MOV\n2) Zamień wartości w rejestrach - XCHG\n3) AND\n4) NOT\n5) OR\n6) XOR\n" +
-					"7) Inkrementacja - In\n8) Dekrementacja - Dec\n9) Pokaż stan rejestrów\n10) Zakończ działanie symulacji\n");
+					"7) Inkrementacja - In\n8) Dekrementacja - Dec\n9) Add - dodawanie wartości\n11 Pokaż stan rejestrów\n12) Zakończ działanie symulacji\n");
 				option = Console.ReadLine();
 
 				Console.Clear();	
@@ -726,12 +729,24 @@
 
 				else if (option == "9")
 				{
+					Console.WriteLine("Dodawanie rejestru AH i BH");
+					Console.WriteLine("AH: " + AH + "BH: " + BH);
+					AH = "0" + AH;
+					BH = "0" + BH;
+					Console.WriteLine("AH: " + AH + "BH: " + BH);
+					BigInteger number1 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+					BigInteger number2 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+					Console.WriteLine(number1 + number2);
+				}
+
+				else if (option == "11")
+				{
 					Console.Clear();
 					Console.WriteLine("Stan rejestrów:");
 					Console.WriteLine("AH: " + AH + "\nBH: " + BH + "\nCH: " + CH + "\nDH: " + DH);
 				}
 
-				else if (option == "10")
+				else if (option == "12")
 					Console.Write("");
 				else
 					Console.WriteLine("Brak takiej opcji, powrót do wpisania rejestrów");
