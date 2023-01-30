@@ -737,6 +737,9 @@ namespace Intel_8086
 					BigInteger number1 = BigInteger.Parse(AH, NumberStyles.HexNumber);
 					BigInteger number2 = BigInteger.Parse(BH, NumberStyles.HexNumber);
 					Console.WriteLine(number1 + number2);
+					//dobrze działa do zrobienia konwersja 
+
+
 				}
 
 				else if (option == "11")
