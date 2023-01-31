@@ -730,13 +730,21 @@ namespace Intel_8086
 				else if (option == "9")
 				{
 					Console.WriteLine("Dodawanie rejestru AH i BH");
-					Console.WriteLine("AH: " + AH + "BH: " + BH);
+					Console.WriteLine("AH: " + AH + " BH: " + BH);
 					AH = "0" + AH;
 					BH = "0" + BH;
-					Console.WriteLine("AH: " + AH + "BH: " + BH);
+					Console.WriteLine("AH: " + AH + " BH: " + BH);
 					BigInteger number1 = BigInteger.Parse(AH, NumberStyles.HexNumber);
 					BigInteger number2 = BigInteger.Parse(BH, NumberStyles.HexNumber);
-					Console.WriteLine(number1 + number2);
+					BigInteger StringVal = number1 + number2;
+					BigInteger bi = StringVal;
+					int i = (int)bi;
+					int y = Int32.Parse(bi.ToString());					
+					
+					Console.WriteLine(y);
+					string hexVal = string.Format("{0:x}", y);
+					Console.WriteLine("To daje po konwersji");
+					Console.WriteLine(hexVal);
 					//dobrze działa do zrobienia konwersja 
 
 
