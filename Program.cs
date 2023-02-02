@@ -729,25 +729,76 @@ namespace Intel_8086
 
 				else if (option == "9")
 				{
-					Console.WriteLine("Dodawanie rejestru AH i BH");
-					Console.WriteLine("AH: " + AH + " BH: " + BH);
-					AH = "0" + AH;
-					BH = "0" + BH;
-					Console.WriteLine("AH: " + AH + " BH: " + BH);
-					BigInteger number1 = BigInteger.Parse(AH, NumberStyles.HexNumber);
-					BigInteger number2 = BigInteger.Parse(BH, NumberStyles.HexNumber);
-					BigInteger StringVal = number1 + number2;
-					BigInteger bi = StringVal;
-					int i = (int)bi;
-					int y = Int32.Parse(bi.ToString());					
-					
-					Console.WriteLine(y);
-					string hexVal = string.Format("{0:x}", y);
-					Console.WriteLine("To daje po konwersji");
-					Console.WriteLine(hexVal);
-					//dobrze działa do zrobienia konwersja 
+					//Console.WriteLine("Dodawanie rejestru AH i BH");
+					//Console.WriteLine("AH: " + AH + " BH: " + BH);
+					//AH = "0" + AH;
+					//BH = "0" + BH;
+					//Console.WriteLine("AH: " + AH + " BH: " + BH);
+					//BigInteger number1 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+					//BigInteger number2 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+					//BigInteger StringVal = number1 + number2;
+					//BigInteger bi = StringVal;
+					//int i = (int)bi;
+					//int y = Int32.Parse(bi.ToString());								
+					//Console.WriteLine(y);
+					//string hexVal = string.Format("{0:x}", y);
+					//Console.WriteLine("To daje po konwersji");
+					//Console.WriteLine(hexVal);
+
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz pierwszy rejestr: ");
+					string firstRecord = Console.ReadLine();
+					Console.Write("1 - AH, 2 - BH, 3 - CH, 4 - DH\nWybierz drugi rejestr: ");
+					string secondRecord = Console.ReadLine();
+
+					switch (firstRecord, secondRecord)
+					{
+						case ("1", "1"):
+							BigInteger hexAH = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger StringVal = hexAH + hexAH;
+							BigInteger bi = StringVal;
+							int i = (int)bi;
+							int y = Int32.Parse(bi.ToString());
+							string hexVal = string.Format("{0:x}", y);
+							Console.WriteLine(hexVal);
+							break;
+						case ("1", "2"):
+							BigInteger hexAH12 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger hexBH12 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal12 = hexAH12 + hexBH12;
+							BigInteger bi12 = StringVal12;
+							int i12 = (int)bi12;
+							int y12 = Int32.Parse(bi12.ToString());
+							string hexVal12 = string.Format("{0:x}", y12);
+							Console.WriteLine(hexVal12);
+							break;
+						case ("1", "3"):
+							BigInteger hexAH13 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger hexCH13 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal13 = hexAH13 + hexCH13;
+							BigInteger bi13 = StringVal13;
+							int i13 = (int)bi13;
+							int y13 = Int32.Parse(bi13.ToString());
+							string hexVal13 = string.Format("{0:x}", y13);
+							Console.WriteLine(hexVal13);
+							break;
+						case ("1", "4"):
+							BigInteger hexAH14 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger hexDH14 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal14 = hexAH14 + hexDH14;
+							BigInteger bi14 = StringVal14;
+							int i14 = (int)bi14;
+							int y14 = Int32.Parse(bi14.ToString());
+							string hexVal14 = string.Format("{0:x}", y14);
+							Console.WriteLine(hexVal14);
+							break;
 
 
+
+
+
+						default:
+							break;
+					}
 				}
 
 				else if (option == "11")
