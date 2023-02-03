@@ -792,6 +792,45 @@ namespace Intel_8086
 							Console.WriteLine(hexVal14);
 							break;
 
+						case ("2", "1"):
+							BigInteger hexAH21 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger hexBH21 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal21 = hexAH21 + hexBH21;
+							BigInteger bi21 = StringVal21;
+							int i21 = (int)bi21;
+							int y21 = Int32.Parse(bi21.ToString());
+							string hexVal21 = string.Format("{0:x}", y21);
+							Console.WriteLine(hexVal21);
+							break;
+						case ("2", "2"):
+							BigInteger hexBH22 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal22 = hexBH22 + hexBH22;
+							BigInteger bi22 = StringVal22;
+							int i22 = (int)bi22;
+							int y22 = Int32.Parse(bi22.ToString());
+							string hexVal22 = string.Format("{0:x}", y22);
+							Console.WriteLine(hexVal22);
+							break;
+						//case ("2", "3"):
+						//	BigInteger hexAH13 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+						//	BigInteger hexCH13 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+						//	BigInteger StringVal13 = hexAH13 + hexCH13;
+						//	BigInteger bi13 = StringVal13;
+						//	int i13 = (int)bi13;
+						//	int y13 = Int32.Parse(bi13.ToString());
+						//	string hexVal13 = string.Format("{0:x}", y13);
+						//	Console.WriteLine(hexVal13);
+						//	break;
+						//case ("2", "4"):
+						//	BigInteger hexAH14 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+						//	BigInteger hexDH14 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+						//	BigInteger StringVal14 = hexAH14 + hexDH14;
+						//	BigInteger bi14 = StringVal14;
+						//	int i14 = (int)bi14;
+						//	int y14 = Int32.Parse(bi14.ToString());
+						//	string hexVal14 = string.Format("{0:x}", y14);
+						//	Console.WriteLine(hexVal14);
+						//	break;
 
 
 
