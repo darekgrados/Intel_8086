@@ -7,6 +7,8 @@ namespace Intel_8086
 	{
 		static void Main(string[] args)
 		{
+			Console.ForegroundColor = ConsoleColor.Green;
+
 			Console.WriteLine("INTEL 8086\nUzupełnij swoje rejestry:");
 			//Należy pamiętać, że są to wartości w systemie szesnastkowym
 			//Przy wpisie błędnej wartości rejestr zostaje ustawiony na "00"
