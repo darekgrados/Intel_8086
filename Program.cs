@@ -811,30 +811,26 @@ namespace Intel_8086
 							string hexVal22 = string.Format("{0:x}", y22);
 							Console.WriteLine(hexVal22);
 							break;
-						//case ("2", "3"):
-						//	BigInteger hexAH13 = BigInteger.Parse(AH, NumberStyles.HexNumber);
-						//	BigInteger hexCH13 = BigInteger.Parse(BH, NumberStyles.HexNumber);
-						//	BigInteger StringVal13 = hexAH13 + hexCH13;
-						//	BigInteger bi13 = StringVal13;
-						//	int i13 = (int)bi13;
-						//	int y13 = Int32.Parse(bi13.ToString());
-						//	string hexVal13 = string.Format("{0:x}", y13);
-						//	Console.WriteLine(hexVal13);
-						//	break;
-						//case ("2", "4"):
-						//	BigInteger hexAH14 = BigInteger.Parse(AH, NumberStyles.HexNumber);
-						//	BigInteger hexDH14 = BigInteger.Parse(BH, NumberStyles.HexNumber);
-						//	BigInteger StringVal14 = hexAH14 + hexDH14;
-						//	BigInteger bi14 = StringVal14;
-						//	int i14 = (int)bi14;
-						//	int y14 = Int32.Parse(bi14.ToString());
-						//	string hexVal14 = string.Format("{0:x}", y14);
-						//	Console.WriteLine(hexVal14);
-						//	break;
-
-
-
-
+						case ("2", "3"):
+							BigInteger hexAH23 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger hexCH23 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal23 = hexAH23 + hexCH23;
+							BigInteger bi23 = StringVal23;
+							int i23 = (int)bi23;
+							int y23 = Int32.Parse(bi23.ToString());
+							string hexVal23 = string.Format("{0:x}", y23);
+							Console.WriteLine(hexVal23);
+							break;
+						case ("2", "4"):
+							BigInteger hexAH24 = BigInteger.Parse(AH, NumberStyles.HexNumber);
+							BigInteger hexDH24 = BigInteger.Parse(BH, NumberStyles.HexNumber);
+							BigInteger StringVal24 = hexAH24 + hexDH24;
+							BigInteger bi24 = StringVal24;
+							int i24 = (int)bi24;
+							int y24 = Int32.Parse(bi24.ToString());
+							string hexVal24 = string.Format("{0:x}", y24);
+							Console.WriteLine(hexVal24);
+							break;
 						default:
 							break;
 					}
